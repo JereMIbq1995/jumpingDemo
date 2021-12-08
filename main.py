@@ -1,5 +1,6 @@
 from jumpingDemo.script.DrawActorAction import DrawActorAction
 from jumpingDemo.script.HandleJumpingAction import HandleJumpingAction
+from jumpingDemo.script.HandleQuitAction import HandleQuitAction
 from jumpingDemo.script.UpdateScreenAction import UpdateScreenAction
 from jumpingDemo.script.ApplyGravityToPlayer import ApplyGravtityToPlayer
 from jumpingDemo.script.MoveActorsAction import MoveActorsAction
@@ -42,6 +43,7 @@ def main():
 
     script = Script()
 
+    script.add_action("input", HandleQuitAction(1, keyboard_service))
     script.add_action("input", HandleJumpingAction(1, keyboard_service))
     script.add_action("input", HandlePlayerMovementAction(1, keyboard_service))
 
